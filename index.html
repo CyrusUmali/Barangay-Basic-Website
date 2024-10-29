@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pop-up Notification</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+      
+        <img src="paulelogo.jpg"  >
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    
+
+    <div id="home" class="home">
+
+        <img class="bg-image" src="homebg.jpg">
+        <main>
+            <section id="welcome">
+                <h2>Welcome to Barangay Paule Uno!</h2>
+                <p>Your community in Rizal, Laguna. We’re here to help you connect, engage, and stay informed.</p>
+            </section>
+        
+            <a href="https://www.facebook.com/paule.uno" id="contact-btn" class="contact-btn">Connect with us on Facebook</a>
+        </main>
+        
+    </div>
+
+    <div id="about">
+        <h2>About Barangay Paule Uno</h2>
+        <p>
+            Barangay Paule Uno is a vibrant and close-knit community located in the heart of Rizal, Laguna. Known for its 
+            warm and friendly residents, Paule Uno is rich in cultural heritage and community values, making it a unique and 
+            inviting place to call home.
+        </p>
+        <p>
+            The barangay thrives on agriculture, with fertile lands that support diverse crops, including rice, fruits, and 
+            vegetables. Traditional farming practices are still widely embraced, and local produce is a source of pride for 
+            residents and visitors alike. 
+        </p>
+        <p>
+            Residents of Paule Uno take great pride in their peaceful surroundings and strong community spirit. Festivals, 
+            local events, and communal gatherings bring everyone together, fostering a sense of unity and belonging.
+        </p>
+        <p>
+            Come and experience the hospitality of Barangay Paule Uno, where the simple joys of rural life and community values 
+            continue to thrive.
+        </p>
+    </div>
+    
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <img src="clean.jpg" alt="Clean-up Drives">
+                <h3>Clean-up Drives</h3>
+                <p>We organize regular clean-up drives to maintain a clean and healthy environment in our barangay.</p>
+            </div>
+            <div class="service-item">
+                <img src="educass.jpg" alt="Educational Assistance">
+                <h3>Educational Assistance</h3>
+                <p>Providing resources and support to students in need, promoting educational growth within our community.</p>
+            </div>
+            <div class="service-item">
+                <img src="tanod.jpg" alt="Barangay Security Patrol">
+                <h3>Barangay Security Patrol</h3>
+                <p>Our barangay tanods ensure the safety and security of our community through regular patrols and assistance.</p>
+            </div>
+        </div>
+    </section>
+    
+
+  
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+           
+         
+ 
+            <form class="form">
+                <a href="#" class="close-btn">&times;</a>
+               <p class="form-title">Subscribe to Our Newsletter</p>
+                <div class="input-container">
+                  <input placeholder="Enter name" type="text">
+                  <span>
+                    <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                  </span>
+              </div>
+              <div class="input-container">
+                  <input placeholder="Enter email" type="email">
+        
+                  <span>
+                    <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                      <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                  </span>
+                </div>
+                 <button class="submit" type="submit">
+                Submit
+              </button>
+        
+             
+           </form>
+        
+
+
+
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'flex';
+            }, 1000);
+        };
+
+        document.querySelector('.close-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        document.addEventListener('click', function(event) {
+            var popup = document.getElementById('popup');
+            if (popup.style.display === 'flex') {
+                if (!popup.contains(event.target) && !event.target.classList.contains('close-btn')) {
+                    popup.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
